@@ -1,0 +1,150 @@
+/* General layout and design */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+svg {
+    background-color: black;
+    margin: 0 auto;
+}
+
+.scolor {
+    margin: 10px;
+    text-align: center;
+}
+
+#errorColor {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+.score {
+    margin-top: 10px;
+    text-align: center;
+    color: darkred;
+    font-size: 18px;
+}
+
+#startGame {
+    margin-top: 10px;
+    color: black;
+    background-color: yellow;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+#startGame:hover {
+    color: white;
+    background-color: blue;
+}
+
+#reset {
+    margin-top: 10px;
+    color: white;
+    background-color: red;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+
+#reset:hover {
+    color: black;
+    background-color: blue;
+}
+
+.game-area {
+    text-align: center;
+    margin-bottom: 5px;
+    flex-grow: 1;
+}
+
+rect {
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth animation */
+}
+
+.win-animate {
+    fill: green;
+    animation: win-glow 0.5s ease-in-out infinite alternate;
+}
+
+.lose-animate {
+    fill: red;
+    animation: shake 0.3s ease-in-out;
+}
+
+.win-message {
+    animation: zoom-in 0.5s ease-in-out;
+}
+
+.lose-message {
+    animation: screen-shake 0.5s ease-in-out;
+}
+
+@keyframes win-glow {
+    0% { fill: green; }
+    100% { fill: limegreen; }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes zoom-in {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+@keyframes screen-shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, 5px); }
+    50% { transform: translate(5px, -5px); }
+    75% { transform: translate(-5px, -5px); }
+    100% { transform: translate(5px, 5px); }
+}
+
+.confetti {
+    width: 100%;
+    height: 100%;
+    background: url('confetti.gif') no-repeat center center / cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.timer {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#tries-info {
+    color: blue;
+    font-size: 16px;
+    margin-top: 5px;
+}

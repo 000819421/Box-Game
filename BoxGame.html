@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        My name is Abdulkarim Mrad - 000819421.
+        This file was created on March 23, 2023.
+        This file includes a simple box game where you guess the winning
+        box and have a limited number of tries. Difficulty levels can be selected.
+     -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Box Game</h1>
+    </header>
+    
+    <div class="controls">
+        <!-- form to select the color input -->
+        <form id="fm">
+            <div class="scolor">
+                <label for="color">Choose Box Color</label>
+                <input type="color" name="color" id="color">
+            </div>
+            <div id="errorColor"></div>
+        </form>
+
+        <!-- Difficulty Level -->
+        <div class="difficulty">
+            <label for="difficulty">Choose Difficulty:</label>
+            <select id="difficulty" name="difficulty">
+                <option value="easy">Easy (6 boxes)</option>
+                <option value="medium" selected>Medium (9 boxes)</option>
+                <option value="hard">Hard (12 boxes)</option>
+            </select>
+        </div>
+
+        <!-- button to start the game -->
+        <div>
+            <button id="startGame" class="btn btn-primary" type="button">Start Game</button>
+        </div>
+    </div>
+
+    <div class="game-area">
+        <svg width="500" height="400" id="gameBoard">
+            <text x="140" y="50" font-size="20" stroke="yellow">Guess the Winning Box</text>
+        </svg> 
+        <div id="tries-info"></div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="score" id="wintimes"></div>
+        <div class="score" id="loosetimes"></div>
+
+        <div>
+            <button id="reset" class="btn btn-primary">Reset</button>
+        </div>
+    </footer>
+    
+    <script src="javascript.js"></script>
+</body>
+</html>
