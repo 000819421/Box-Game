@@ -21,3 +21,5 @@
 ### Clone this repository:
 ```bash
 git clone https://github.com/000819421/BoxGame.git
+
+> All files and projects are located in the **master** branch of this repository.
